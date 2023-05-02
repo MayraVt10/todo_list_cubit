@@ -48,18 +48,22 @@ class _LoginFormState extends State<LoginForm> {
               }
               return null;
             },
+            //controller: _passwordController,
           ),
           const SizedBox(height: 16),
           ElevatedButton(
             onPressed: () {
-              if (_formKey.currentState!.validate()) {
+              if (_formKey.currentState!.validate() == true) {
                 // Llamamos al método `submit` de nuestro Cubit
                 context.read<LoginCubit>().submit(
+                      context,
                       _usuarioController.text,
                       _passwordController.text,
                     );
+
+                //Navigator.pushNamed(context, '/list');
               }
-              Navigator.pushNamed(context, '/list');
+              print(_usuarioController.text);
             },
             child: const Text('Iniciar sesión'),
           ),

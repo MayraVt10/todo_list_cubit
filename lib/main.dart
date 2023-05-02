@@ -31,7 +31,6 @@ class MyApp extends StatelessWidget {
           '/': (context) => LoginScreen(),
           '/list': (context) => TaskListScreen(),
           '/add': (context) => AddTaskScreen(),
-          // '/label': (context) => LabelTaskScreen(),
         },
         onUnknownRoute: (settings) {
           return MaterialPageRoute(
